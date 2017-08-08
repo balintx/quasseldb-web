@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>GodX Quassel Web Interface</title>
+	<link rel="stylesheet" href="main.css" />
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="https://unpkg.com/flatpickr/dist/flatpickr.min.css">
+	<script src="https://unpkg.com/flatpickr"></script>
+	<script src="heart.js"></script>
+</head>
+
+<body>
+	<header>
+		<section id="title">
+			<h1>Quassel Web Interface</h1>
+		</section>
+	<div class="clear"></div>
+	</header>
+	<nav id="searchNav">
+		<form method="get" id="search_form">
+			<section id="search_string">
+				<h2>Text to search</h2>
+				<input type="text" name="search_string" placeholder="text to search" />
+			</section>
+			<section id="search_date">
+				<h2>Search between dates</h2>
+				<ul>
+					<li>
+						<input type="text" name="search_date1" class="date_input" placeholder="2017-08-01 00:00" />
+					</li>
+					<li>
+						<input type="text" name="search_date2" class="date_input" placeholder="2017-08-01 23:59" />
+					</li>
+				</ul>
+			</section>
+			<section id="search_sender">
+				<h2>Search by nick</h2>
+				<input type="text" name="search_sender" placeholder="nickname">
+			</section>
+			<section id="search_buffers">
+				<h2>Select buffers</h2>
+				<select id="select_buffers" multiple="multiple" required="required">
+				</select>
+			</section>
+			<div id="search_submit_button">
+				<input type="submit" name="search_submit" value="Search" onclick="Search(); return false;" />
+			</div>
+		</form>
+	<div class="clear"></div>
+	</nav>
+	<nav id="optionsNav">
+		<ul>
+			<li id="logout">
+				<a href="#" id="logout_button">Logout</a>
+			</li>
+			<li id="change_password">
+				<a href="#change_password" id="change_password_button">Change your password</a>
+			</li>
+			<li id="search_options">
+				<section id="search_limit">
+					<h2>Number of search results:</h2>
+					<input type="number" id="input_search_limit" name="search_limit" min="1" value="30" />
+				</section>
+				<section id="search_open">
+					<h2>Number of messages when scrolling (per direction):</h2>
+					<input type="number" id="input_open_limit" name="open_limit" min="1" value="10" />
+				</section>
+			</li>
+		</ul>
+	<div class="clear"></div>
+	</nav>
+	<table id="messages">
+	</table>
+</body>
+
+</html>
