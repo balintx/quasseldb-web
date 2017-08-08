@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Quassel Web Interface - Login</title>
+<script>
+<!--
+	window.addEventListener('load', function() {
+		document.getElementById('form_login').addEventListener('submit', function (e) {
+			e.preventDefault();
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+			  reply = JSON.parse(this.responseText);
+			  if (reply.success) {
+				  location.href = reply.location;
+			  } else {
+				  alert('Login failed');
+			  }
+			}
+			}
+			xhttp.open("POST", "heart.php", true);
+			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+			var str = 'login_username=' + encodeURIComponent(document.getElementById('field_username').value) + '&login_password=' + encodeURIComponent(document.getElementById('field_password').value) + '&db=' + encodeURIComponent(document.getElementById('field_db').selectedIndex);
+			xhttp.send(str);
+		});
+	});
+-->
+</script>
+</head>
+<body>
+<form method="post" id="form_login">
+<ul>
+	<li><input id="field_username" type="text" name="username" placeholder="Quassel Username"></li>
+	<li><input id="field_password" type="password" name="password" placeholder="Quassel Password"></li>
+	<li><select id="field_db">
+	<option>Quassel (user1, user2, user5)</option>
+	<option>Quassel "foo" (user7, user8)</option>
+	<option>Quassel "bar" (user3, user4, user6, user9)</option>
+	</select></li>
+	<li><input id="button_login" type="submit" value="Login"></li>
+</ul>
+</form>
+</body>
+</html>
